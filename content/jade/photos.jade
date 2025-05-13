@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="main-min.css" type="text/css")
+  title Tehnikamuuseum
+body
+  .pictures-page-overlay
+    header.header-est
+      .subpage-header
+        .front-page-header
+          a(href="/")
+            | Esileht
+        .sub-header
+          .sub-header-top
+            a(href="/contact")
+              | Muuseum
+            a(href="/expositions")
+              | Näitus
+          .sub-header-bottom
+            //- a(href="/photos.html")
+            //-   | Ajastud
+            a(href="/publications")
+              | Kirjatöö
+        hr
+      .mobile-nav
+        .line
+        .line
+        .line
+      .mobile-nav-ul
+        ul
+          li(data-title="0" class="active") Tsaariaeg
+          li(data-title="2") Eesti aeg
+          li(data-title="1") Saksa aeg
+          li(data-title="3") Nõukogude aeg
+          li(data-title="4") Kaasaeg
+    section.pictures-content
+        aside.pictures-side
+          .static-theme-container
+            h2 Ajastud
+            hr#static-hr
+          ul
+            li(data-title="0" class="active") Tsaariaeg
+            li(data-title="2") Eesti aeg
+            li(data-title="1") Saksa aeg
+            li(data-title="3") Nõukogude aeg
+            li(data-title="4") Kaasaeg
+        section.pictures-body
+          .col1
+          .col2
+          .col3
+          .col4
+          .col5
+  .picture-large-overlay
+    .large-picture-container
+  .page-language
+    a(href="/")
+      .language-est(data-title="Eesti")
+    a(href="/en.html")
+      .language-eng(data-title="Inglise")
+    a(href="ru.html")
+      .language-rus(data-title="Vene")
+    a(href="tib.html")
+      .language-tib(data-title="Tiibeti")
+    //- .language-tib(data-title="བོད་སྐད།")
+  
+  script(src="content/script/jquery-1.7.2.min.js")
+  //- script(src="content/script/checkbrowser.js")
+  script(src="content/script/photos-min.js")
+  

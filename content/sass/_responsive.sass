@@ -1,81 +1,41 @@
-@media (max-width: 1270px)
-  body
-    header
-      // width: 80vw
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
 
-
-
-@media (max-width: 990px)
-  body
-    header
-      // width: 100vw
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          // background: green
-          // margin: 10px 42px
-          height: 100px
-          width: 100px
-
-@media (max-width: 750px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 80px
-          width: 80px
 
 @media (max-width: 660px)
   body
     header
       .nav-buttons-wrapper
         padding: 0 100px
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 140px
-          width: 140px
 
 @media (max-width: 630px)
   body
-    header
+    header.main-header
       .nav-buttons-wrapper
         padding: 0
         justify-content: center
         .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
           margin: 15px 15px
 
-@media (max-width: 500px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 100px
-          width: 100px
-
-@media (max-width: 415px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          height: 100px
-          width: 100px
-
 @media (max-width: 385px)
   body
-    header
+    header.main-header
       .nav-buttons-wrapper
         width: 100%
-
-@media (max-width: 300px)
-  body
-    header
-      .nav-buttons-wrapper
-        .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
-          width: 100%
-          margin: 0
-          border-radius: 0
-          &:hover
-            transform: none
+        flex-direction: column
+        // height: 85vh
+        margin: 15vh 0 0 0
+        .nav-buttons-up, .nav-buttons-down
+          flex-direction: column
+          align-items: center
+          div
+            width: 98vw
+            height: 20vh
+            border-radius: 0
+            margin: 2px
+            transition: none
+            &:hover
+              transform: none
+            p.en
+              font-size: 16px
 
 
 @media (max-width: 1200px)
@@ -89,38 +49,38 @@
       display: none
 
 @media (max-width: 750px)
+  .page-logo
+    display: none
   section.pictures-body
     .col3
       display: none
+  .pictures-page-overlay
+    header
+      .subpage-header
+        hr
+          display: none
+    .pictures-content
+      .pictures-side
+        display: none
 
 @media (max-width: 650px)
   .pictures-page-overlay
-    .pictures-header
-      hr
-        display: none
     .pictures-content
       .pictures-side
         hr#static-hr
           margin: 0
         width: 200px
         h2
-          // background: red
           margin-left: 5px
         ul
           li
-            // background: red
             padding: 5px 5px
+
 
 @media (max-width: 520px)
   section.pictures-body
     .col2
       display: none
-
-@media (max-width: 450px)
-  .pictures-page-overlay
-    .pictures-content
-      .pictures-side
-        display: none
 
 @media (max-width: 1000px)
   .contact-page-overlay
@@ -128,27 +88,28 @@
       .contact-body
         section#contact
           .contact-section-wrapper
-            flex-direction: column-reverse
+            display: block
             article
-              margin: 5px 1px
-              width: 100%
+              width: auto
             iframe
               width: 100%
+              padding: 0
 
 @media (max-width: 750px)
   .contact-page-overlay
     header.contact-header
-      padding-top: 70px
-      height: 70px
       p
         padding-bottom: 0
         margin-bottom: 0
-      // background: red
     .contact-content-wrapper
       .contact-side
         display: none
       .contact-body
         padding: 0 20px
+        margin-left: 0
+  .pictures-page-overlay
+    .pictures-content
+      .pictures-body
         margin-left: 0
 
 @media (max-width: 250px)
@@ -157,3 +118,135 @@
       .contact-body
         iframe
           display: none
+
+
+@media (max-width: 700px)
+  .publications-page-overlay
+    .publications-body
+      padding: 0
+
+@media (max-width: 300px)
+  .publications-page-overlay
+    .publications-body
+      p
+        padding: 0 20px
+      a
+        padding: 0 40px
+
+@media (max-width: 550px)
+  .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
+    header
+      display: flex
+      justify-content: flex-end
+      padding: 25px 0
+      background: $header-bg
+      .subpage-header
+        font-size: 18px
+        a
+          margin: 0 50px
+        .front-page-header
+          width: 100vw
+          height: 60px
+          text-align: left
+          // line-height: 60px
+          font-size: 30px
+        .sub-header
+          display: none
+    .contact-content-wrapper
+      .contact-body
+
+//
+// @media (max-width: 1300px)
+//   header.header-en
+//     // font-size: 26px
+//
+// @media (max-width: 1150px)
+//   header.header-en
+    // font-size: 22px
+    // color: rgb(85, 84, 84)
+    // filter: blur(0.7px)
+
+@media (max-width: 1000px)
+  header.header-en, header.header-est
+    font-size: 26px
+    // a
+    //   margin: 0 12px
+
+@media (max-width: 900px)
+  header.header-en
+    font-size: 22px
+    a
+      margin: 0 15px
+
+@media (max-width: 800px)
+  header.header-est, header.header-rus
+    font-size: 24px
+
+@media (max-width: 700px)
+  header.header-est, header.header-rus
+    font-size: 22px
+
+@media (max-width: 750px)
+  header.header-est
+    font-size: 24px
+    a
+      margin: 0 8px
+  header.header-en
+    font-size: 20px
+    a
+      margin: 0 8px
+
+@media (max-width: 750px)
+  .pictures-page-overlay
+    header
+      .mobile-nav
+        display: flex
+
+  header.header-en, header.header-est, header.header-rus
+    display: flex
+    justify-content: flex-end
+    // padding: 50px 0
+    background: $header-bg
+    .subpage-header
+      a
+        margin: 0 50px
+      .front-page-header
+        width: 100vw
+        // height: 100px
+        text-align: left
+        // line-height: 100px
+        font-size: 30px
+      .sub-header
+        display: none
+
+
+@media (max-width: 550px)
+  .pictures-page-overlay, .contact-page-overlay, .publications-page-overlay, .cars-page-overlay
+    .contact-content-wrapper
+      margin-top: 80px
+    section.publications-content
+      margin-top: 80px
+    header
+      display: flex
+      justify-content: flex-end
+      padding: 25px 0
+      background: $header-bg
+      .mobile-nav
+        height: 80px
+      .mobile-nav-ul
+        top: 80px
+      .subpage-header
+        font-size: 18px
+        a
+          margin: 0 50px
+        .front-page-header
+          width: 100vw
+          // height: 60px
+          text-align: left
+          // line-height: 60px
+          font-size: 30px
+        .sub-header
+          display: none
+    .pictures-content
+      .pictures-body
+        margin-top: 80px

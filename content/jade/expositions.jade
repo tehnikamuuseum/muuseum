@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="main-min.css" type="text/css")
+  title Tehnikamuuseum
+body
+  .cars-page-overlay
+    header.header-est
+      .subpage-header
+        .front-page-header
+          a(href="/")
+            | Esileht
+        .sub-header
+          .sub-header-top
+            a(href="/contact")
+              | Muuseum
+            //- a(href="/expositions.html")
+            //-   | Näitus
+          .sub-header-bottom
+            a(href="/photos")
+              | Ajastud
+            a(href="/publications")
+              | Kirjatööd
+        hr
+    section.cars-content
+        aside.cars-side
+          .static-theme-container
+          ul
+            li#expo Näitus
+            //- li#events Üritused
+            li.expo-list#1 ZIS 110, 1946
+            li.expo-list#2 GAZ 13 "TŠAIKA", 1962
+            li.expo-list#3 GAZ 11, 1941
+            li.expo-list#4 GAZ-M-20 "POBEDA" kabriolett, 1950
+            li.expo-list#5 MOSKVITŠ 400-420, 1951
+            li.expo-list#6 MOSKVITŠ 401, 1955
+            li.expo-list#10 Tanklaautomaat, 1972
+            li.expo-list#7 Omavalmistatud auto, Albert Pajor, 1963
+            li.expo-list#14 Vjatka VP 150, 1959
+            li.expo-list#15 Tartu ART muruniiduk, 1970
+            li.expo-list#16 Laste pedaalauto, 1915
+            li.expo-list#17 Omavalmistatud 200 cm³ mootor, Hans Maidla, 1970ndad
+            li.expo-list#18 Renault mootor, 1914
+            li.expo-list#19 Telefoniputka, 1958
+            li.expo-list#20 Invaliidiauto SZA-M, 1962
+            li.expo-list#26 Fordson traktor, 1926
+            li.expo-list#29 Lasteratas, 1958
+            li.expo-list#28 Lasteratas, 1956
+            li.expo-list#30 Autojuhi müts, 1913
+            li.expo-list#31 Miilitsa sau, 1969
+            li.expo-list#35 Lasteautod 1968, 1991
+            li.expo-list#42 Lokomobiili mudel, Roland Sellmann, 1930ndad
+            li.expo-list#52 Tõllalatern, 1896
+            li.expo-list#53 Aurumootori mudel, 1920ndad
+            li.expo-list#54 Aurumootori mudel, 1930ndad
+            li.expo-list#56 Bensiinimootori mudel, 1930ndad
+            li.expo-list#70 TIZ-AM 600, 1938
+            li.expo-list#71 K-750-M, 1966
+            li.expo-list#65 Lapsevanker, XIX saj.
+            li.expo-list#66 Troska, XIX saj.
+            li.expo-list#67 Meeste jalgratas, Kristjan Saare vabrik, 1930ndad
+            li.expo-list#68 Pedaalidega hobune, 1963
+        div.cars-body
+          .col1
+          .col2
+          .col3
+          .col4
+          .col5
+  .page-language
+    a(href="/")
+      .language-est(data-title="Eesti")
+    a(href="/en.html")
+      .language-eng(data-title="Inglise")
+    a(href="ru.html")
+      .language-rus(data-title="Vene")
+    a(href="tib.html")
+      .language-tib(data-title="Tiibeti")
+    //- .language-tib(data-title="བོད་སྐད།")
+  
+  script(src="content/script/jquery-1.7.2.min.js")
+  //- script(src="content/script/checkbrowser.js")
+  script(src="content/script/cars-min.js")
+  

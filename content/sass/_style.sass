@@ -2,13 +2,25 @@ body, html
   margin: 0
   padding: 0
   background: black
-  user-select: none
   cursor: default
   overflow: hidden
+
+.no-select
+  -webkit-touch-callout: none
+  -webkit-user-select: none
+  -khtml-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+
+body.tib
+  font-family: 'TibetanUnicode' !important
 
 a:visited, a:active, a:link, a:hover
   text-decoration: none
   color: inherit
+a
+  outline: 0
 
 .video-container
   height: 100%
@@ -31,50 +43,89 @@ a:visited, a:active, a:link, a:hover
   left: 0
   right: 0
   bottom: 0
-  display: none
+  display: flex
   z-index: $z-overlay
   background: $overlay-bg
-  overflow-x: hidden
+  // overflow-x: hidden
 
 
 .header-style
-  height: 100px
-  color: rgb(41, 41, 41)
+  @extend .no-select
+  width: 100vw
+  height: 0px
+  padding: 50px 0
+  color: rgb(112, 112, 112)
   font-size: 30px
   text-transform: uppercase
   font-family: $font4
   text-align: right
-  p
-    width: 100%
-    padding-right: 50px
-
-header
-  display: flex
+  filter: blur(0.8px)
   justify-content: center
+  width: 100vw
+  // overflow-y: scroll
+  // overflow: auto
+  // overflow: initial
+  a
+    margin: 0 20px
+    transition: color 0.2s ease-in-out
+    &:hover
+      color: #ccc
+  a.tib
+    font-family: 'TibetanUnicode'
+
+.subpage-header
+  // width: auto
+  margin: 0 auto
+  display: flex
+  .sub-header
+    display: flex
+
+.blur-class
+  filter: blur(0px)
+
+header.main-header
+  @extend .no-select
+  display: flex
   align-items: center
   width: 100vw
   height: 100vh
+  justify-content: center
   .nav-buttons-wrapper
+    // background: pink
     margin-top: 75px
-    padding: 0 50px
-    width: 70%
-    max-width: 725px
+    filter: blur(0.7px)
+    // padding: 0 50px
+    // width: 70%
+    // max-width: 725px
     display: flex
-    justify-content: space-between
-    align-items: center
-    flex-flow: row wrap
+    // justify-content: space-between
+    // align-items: center
+    flex-flow: column nowrap
     z-index: $z-nav-buttons-wrap
+    .nav-buttons-up
+      // background: green
+      display: flex
+    .nav-buttons-down
+      display: flex
+
+      // background: olive
     .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
       p
         padding-left: 2px
+        // background: rgba(255,0,0,0.2)
+        // line-height: inherit
+        // height: 100%
+        // display: flex
+        // align-items: center
+      p.en
+        font-size: 16px
         // filter: blur(1px)
-      background: rgba(0,0,0,0.30)
+      background: rgba(0,0,0,0.40)
       height: 140px
       width: 140px
-      margin: 10px 35px
+      margin: 10px 100px
       border-radius: 85px
       border: 1px solid #ccc
-      filter: blur(0.85px)
       font-family: $font3, serif
       display: flex
       justify-content: center
@@ -84,21 +135,32 @@ header
       text-transform: uppercase
       font-size: 16px
       letter-spacing: 3px
-      transition: all 1.5s cubic-bezier(0.13, 1.1, 0.92, 0.9)
+      transition: transform 1.5s cubic-bezier(0.13, 1.1, 0.92, 0.9)
       &:hover
         transform: scale(1.2)
         background: rgba(0, 0, 0, 0.5)
         cursor: pointer
-        filter: blur(0px)
-    .nav-button-one
-      font-size: 14px
-    .nav-button-five
-      font-size: 15px
+  .tib
+    filter: blur(0)
+    .nav-button-one, .nav-button-two, .nav-button-three, .nav-button-four, .nav-button-five, .nav-button-six
+      p
+        font-size: 24px
+        font-family: 'TibetanUnicode'
+
+      &:hover
+        filter: blur(0)
+
+
+  .ru
+    .nav-button-three
+      p
+        font-size: 14px
 
 .page-language
+  @extend .no-select
   position: absolute
   top: 5px
-  right: 10px
+  right: 20px
   display: flex
   z-index: $z-nav-buttons-wrap
   // background: olive
@@ -108,6 +170,7 @@ header
     border-radius: 20px
     margin: 2px 2px
     // background: red
+    font-family: sans-serif
     opacity: 0.7
     background-repeat: no-repeat
     background-size: cover
@@ -126,6 +189,17 @@ header
       top: 120%
       // background: green
       text-align: center
+  // .language-tib
+
+  .language-est, .language-eng, .language-rus
+    font-family: sans-serif
+
+  .language-tib
+    font-family: 'TibetanUnicode'
+    font-size: 16px
+    &[data-title]:hover:after
+      top: 130%
+
       // left: 0
   .language-est
     background-image: url("content/images/ee.gif")
@@ -136,6 +210,14 @@ header
   .language-tib
     background-image: url("content/images/tib.jpg")
 
+// .lang-tib
+//   .language-est, .language-eng, .language-rus
+//     &[data-title]:hover:after
+//       content: attr(data-title)
+//       font-size: 16px
+//       top: 130%
+//       font-family: 'TibetanUnicode'
+
 .overlay-back-button
   position: absolute
   left: 15px
@@ -144,43 +226,92 @@ header
   font-size: 25px
   color: #ccc
   z-index: $z-page-logo
+  background: rgba(0,0,0,0.7)
+  padding: 2px
   cursor: pointer
   display: none
 
 .page-logo
+  @extend .no-select
   position: fixed
   left: 15px
   top: 5px
-  height: 110px
-  width: 120px
-  border-radius: 60px
-  background: white
+  height: 109px
+  width: 110px
+  // background: black
+  // border-radius: 60px
+  // background: white
   z-index: $z-page-logo
-  background: url("content/images/logo8.jpg")
+  background: url("content/images/logo-trans.png")
   // background: #ccc
   background-repeat: no-repeat
   background-position: center
-  filter: invert(100%) sepia(100%)
-  opacity: (0.50)
+  // filter: invert(100%) sepia(100%)
+  // opacity: (0.50)
   background-size: contain
   transition: all .25s ease-in-out
-  &:hover
-    // background: #ccc
-    opacity: (0.55)
-    cursor: pointer
+  // &:hover
+  //   // background: #ccc
+  //   opacity: (0.55)
+  //   cursor: pointer
 
 
 .pictures-page-overlay
+  @extend .no-select
   @extend .overlay-class
   flex-direction: column
-  background: black
-  display: flex
-  overflow-x: hidden
-  // background: none
-  .pictures-header
+  // overflow-x: hidden
+  // display: flex
+  header
     @extend .header-style
-    height: 100px
-    position: relative
+    z-index: 2
+    position: fixed
+    background: rgba(0,0,0,0.8)
+    padding: 35px 0 65px 0
+    width: 100vw
+    .subpage-header
+      display: flex
+      justify-content: center
+      // background: red
+    // justify-content: left
+    // justify-content: center
+    .mobile-nav
+      height: 100px
+      width: 40px
+      cursor: pointer
+      position: absolute
+      // background: #ccc
+      right: 10px
+      top: 0
+      display: none
+      flex-direction: column
+      justify-content: center
+      .line
+        width: 100%
+        height: 3px
+        margin: 5px 0
+        background: #ccc
+        border-radius: 2px
+    .mobile-nav-ul
+      display: none
+      position: absolute
+      right: 0
+      top: 100px
+      background: rgba(0,0,0,0.9)
+      margin: 0
+      padding: 0
+      ul
+        text-align: left
+        color: #ded9d9
+        font-size: 20px
+        li
+          padding: 10px
+          cursor: pointer
+          border-bottom: 1px solid #ccc
+          &:last-child
+            border-bottom: none
+          &:first-child
+            background: rgba(250,250,250,0.2)
     hr
       position: absolute
       right: 0
@@ -189,6 +320,8 @@ header
       border: 0
       border-bottom: 1px solid #7c7a7a
       width: 90%
+  header.header-rus, .header-tib
+    filter: blur(0)
   .pictures-content
     display: flex
     justify-content: flex-start
@@ -206,30 +339,34 @@ header
         border-top: 1px solid #ccc
         border-bottom: none
       h2
-        margin-top: 100px
+        margin-top: 150px
         font-size: 30px
         padding: 10px 0
         font-weight: bold
         margin-left: 50px
+        &#en
+          font-size: 28px
       ul
         margin-right: 50px
         font-size: 22px
         font-family: $font1, serif
-        cursor: pointer
-        width: 100%
+        // cursor: pointer
         letter-spacing: 2px
         position: fixed
         left: 0
-        width: 300px
+        width: 250px
 
         height: 100vh
         // background: pink
         // overflow-y: scroll
         li
-          padding: 5px 50px
+          padding: 5px 0px 5px 50px
           transition: all .25s ease-in-out
           &:hover
             background: rgba(250,250,250,0.3) !important
+            cursor: pointer
+          &:first-child
+            background: rgba(250,250,250,0.2)
         #all-images
           // color: #a8a6a6
           background: rgba(250,250,250,0.2)
@@ -242,44 +379,70 @@ header
       display: flex
       // justify-content: flex-start
       align-items: flex-start
-      flex-flow: row wrap
-      // background: pink
+      flex-flow: row nowrap
+      // background: red
       margin-left: 250px
+      overflow-y: scroll
+      margin-top: 100px
       .col img
         display: none
       .col1, .col2, .col3, .col4, .col5
         border-left: 2px solid black
-        flex: 1
-        height: 500px
+        // flex: 1
+        // height: 500px
         img
-          transform: rotate(180deg)
+          // transform: rotate(180deg)
+          cursor: pointer
           width: 100%
           display: block
           height: auto
           // margin: 3px
           border-bottom: 3px solid black
-
+      .col1
+        width: 50%
+      .col2
+        width: 50%
+      .col3
+        width: 33.3%
+      .col4
+        width: 25%
+      .col5
+        width: 20%
 .cars-page-overlay
+  @extend .no-select
   @extend .pictures-page-overlay
   // display: flex
-  .cars-header
-    @extend .pictures-header
-    height: 100px
+  header
+    // @extend .pictures-header
+    // height: 100px
+  //   position: fixed
+  //   background: rgba(0,0,0,0.8)
+  //   hr
+  //     position: absolute
+  //     right: 0
+  //     margin: 0
+  //     bottom: 0
+  //     border: 0
+  //     border-bottom: 1px solid #7c7a7a
+  //     width: 90%
+  // header.header-rus, .header-tib
+  //   filter: blur(0)
   .cars-content
     @extend .pictures-content
+    overflow-y: auto
     .cars-side
       filter: blur(0.55px)
       @extend .pictures-side
-      position: relative
+      position: fixed
+      // overflow-y: scroll
       ul
         margin-top: 100px
         margin-right: 50px
         font-size: 22px
         font-family: $font1, serif
-        cursor: pointer
         width: 100%
         letter-spacing: 2px
-        position: fixed
+        // position: fixed
         top: 0
         left: 0
         width: 300px
@@ -287,31 +450,53 @@ header
         // background: pink
         overflow-y: scroll
         li
-          padding: 5px 50px
+          cursor: pointer
+          padding: 10px 20px
           transition: none
-          &:hover
-            background: rgba(250,250,250,0.3)
+          border-bottom: 1px solid rgb(27, 27, 27)
+          &:nth-child(2)
+            padding-top: 10px
+            border-top: 1px solid white
           &:first-child
-            margin-top: 50px
+            margin-top: 20px
+            background: none
+            cursor: default
+            &:hover
+              background: none !important
+              cursor: default
+      .expo-list
+        font-size: 20px
+
     .cars-body
       @extend .pictures-body
-      margin-left: 0
-      margin-top: -3px
+      margin-left: 300px
+      margin-top: 100px
+      overflow-y: scroll
+
       .col img
         display: none
       .col1, .col2, .col3, .col4, .col5
         border-left: 2px solid black
-        flex: 1
-        height: 500px
+        // flex: 1
+        // width: 15%
+        // height: 500px
         img
-          transform: rotate(180deg)
+          // transform: rotate(180deg)
           width: 100%
           display: block
           height: auto
           border-bottom: 3px solid black
+          transition: all 0.5s ease-in-out
 
 
+.lightfilter
+  filter: brightness(150%)
 
+.darkfilter
+  filter: brightness(65%)
+
+.highlight-li
+  background: rgba(250,250,250,0.4)
 
 .video-filter-overlay
   @extend .overlay-class
@@ -319,22 +504,89 @@ header
   background: $video-filter
   z-index: $z-vidfilter-overlay
 
+.publications-page-overlay
+  @extend .overlay-class
+  flex-flow: column nowrap
+  section.publications-content
+    overflow-y: scroll
+    margin-top: 100px
+  header.header-rus, .header-tib
+    filter: blur(0)
+  header
+    @extend .header-style
+    position: fixed
+    background: rgba(0,0,0,0.8)
+    padding: 35px 0 65px 0
+    width: 100vw
+    .subpage-header
+      display: flex
+      justify-content: center
+  .publications-body
+    margin: 0
+    padding: 0 50px
+    font-weight: 400
+    color: white
+    font-family: $font4, serif
+    font-family: 'Open Sans', sans-serif
+    p
+      background: red
+      min-height: 50px
+      line-height: 45px
+      padding: 0 50px
+      margin-top: 10px
+      background: $section-header-light
+      display: flex
+      align-items: center
+    a
+      display: block
+      margin-bottom: 2px
+      min-height: 30px
+      line-height: 30px
+      padding: 0 80px
+      // margin-bottom: 10px
+      background: $section-article-light
+      color: #b6b6b6
+      &:last-child
+        margin-bottom: 100px
+      display: flex
+      align-items: center
+      .publication-pdf
+        @extend .download-image
+        background-repeat: no-repeat
+        padding-right: 10px
+
 .contact-page-overlay
   @extend .overlay-class
-  // display: flex
-  // background: none
-  // height: 1000px
   flex-flow: column nowrap
-  // background: blue
-  // position: relative
-  .contact-header
+  // display: flex
+  header
     @extend .header-style
     // position: relative
+    // background: pink
+    // margin-top: 200px
+    padding: 50px 0
+  header
+    @extend .header-style
+    position: fixed
+    background: rgba(0,0,0,0.8)
+    padding: 35px 0px 65px 0px
+    width: 100vw
+    .subpage-header
+      display: flex
+      justify-content: center
+  header.header-rus, .header-tib
+    filter: blur(0)
+    // height: 100px
+    // position: relative
+    // display: none
   .contact-content-wrapper
     flex: 1
+    overflow-y: scroll
+    margin-top: 100px
     // height: 3000px
-    display: flex
+    // display: flex
     .contact-side
+      @extend .no-select
       position: fixed
       left: 0
       filter: blur(0.55px)
@@ -347,7 +599,7 @@ header
       // color: black
       // height: 2000px
       ul
-        margin-top: 50px
+        margin-top: 40px
         margin-right: 50px
         font-size: 22px
         font-family: $font4, serif
@@ -363,21 +615,23 @@ header
         width: 250px
         // height: 900px
         li
-          padding: 10px 50px
+          padding: 7px 20px 7px 50px
+          // background: red
           transition: all .25s ease-in-out
           z-index: 20
           &:hover
             background: rgba(250,250,250,0.3) !important
     .contact-body
-      // background: green
+      // background: red
       margin-left: 250px
       color: #ccc
       flex: 1
-      padding: 0px 50px 50px 20px
+      padding: 0px 20px 50px 20px
       display: flex
       flex-flow: column nowrap
       align-items: center
       // height: 2000px
+      // overflow-y: scroll
       section
         width: 100%
         .heading
@@ -393,15 +647,21 @@ header
           padding-top: 15px
           background: $section-article
           color: $main-text-color
+          font-family: 'Open Sans', sans-serif
+          margin: 5px 0px
+          padding: 10px 10px
       section#contact
         .contact-section-wrapper
           display: flex
+          flex-direction: row-reverse
           iframe
-            padding-top: 15px
+            // padding-top: 15px
             height: 300px
             width: 60%
             max-width: 680px
             opacity: 0.8
+            margin: 5px 0px
+            padding-right: 2px
           article
             flex: 1
             padding-left: 20px
@@ -410,6 +670,8 @@ header
         article
           .document-download
             margin-bottom: 5px
+            span.download-title-tib
+              font-family: 'TibetanUnicode'
             a
               line-height: 28px
               display: inline-block
@@ -418,30 +680,44 @@ header
                 font-style: italic
                 color: #9d9a9a
                 margin: 0 25px 0 10px
-              .download-image
-                float: left
-                margin: 0
-                display: block
-                width: 28px
-                height: 28px
-                background-image: url("content/images/acrobat_icon.png")
-                background-size: contain
+.download-image
+  @extend .no-select
+  float: left
+  margin: 0
+  display: block
+  width: 26px
+  height: 26px
+  background-image: url("content/images/acrobat_icon.png")
+  background-size: contain
 
 .picture-large-overlay
   @extend .overlay-class
-  background: rgba(0,0,0,0.80)
+  display: none
+  background: rgba(0,0,0,0.90)
+  // display: block
+  cursor: pointer
   .large-picture-container
-    height: 100%
-    width: 100%
-    .large-picture-close
-      position: absolute
-      top: 40px
-      right: 40px
-      height: 35px
-      width: 35px
-      font-size: 35px
-      line-height: 35px
-      color: rgba(255,255,255,0.7)
+    position: absolute
+    top: 5%
+    left: 20%
+    height: 90%
+    width: 60%
+    background: red
+  .large-picture-close
+    position: absolute
+    top: 2.5%
+    left: 28%
+    // height: 80%
+    width: 50%
+    font-size: 25px
+    line-height: 25px
+    color: rgba(255,255,255,0.7)
+
+    text-align: right
+    // background: pink
+    // &:hover
+    //   color: white
+    span
       cursor: pointer
       &:hover
         color: white
