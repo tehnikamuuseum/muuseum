@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+html(lang="en")
+head
+  meta(charset="UTF-8")
+  meta(name="viewport" content="width=device-width, initial-scale=1")
+  link(rel="stylesheet" href="main-min.css" type="text/css")
+  title Tehnikamuuseum
+body
+  .video-container
+    video(poster="content/images/fpic1.jpg" autoplay loop)
+      source(src="https://s3.eu-west-2.amazonaws.com/j-bucket0092/muuseum/T3.mp4" type="video/mp4")
+      source(src="https://s3.eu-west-2.amazonaws.com/j-bucket0092/muuseum/T3.webm" type="video/webm")
+    
+  header 
+    .nav-buttons-wrapper
+      .nav-button-four(data-overlay="contact-page-overlay")
+        p
+          |Kontakt
+      .nav-button-one(data-overlay="cars-page-overlay")
+        p
+          |Näitus
+      .nav-button-two(data-overlay="pictures-page-overlay")
+        p
+          |Ajastud
+      .nav-button-three(data-overlay="publications-page-overlay")
+        p
+          |Kirjatööd
+      .nav-button-five(data-overlay="museum-page-overlay")
+        p
+          |Muuseumist
+      .nav-button-six(data-overlay="museum-page-overlay")
+        p
+          |Tühi
+      
+  .video-filter-overlay
+  .cars-page-overlay
+    header.cars-header
+      p
+        | // Näitus // Eksponaadid
+      
+    section.cars-content
+        aside.cars-side
+          .static-theme-container
+          ul
+            li ZIS 110
+            li Pobeda M20
+            li Mosse 400-422
+            li Mosse 401
+            li GAZ 11
+            li Eksponaat 1
+            li Eksponaat 2
+            li Eksponaat 3
+            li Eksponaat 4
+            li Eksponaat 5
+            li Eksponaat 6
+            li Eksponaat 7
+            li Eksponaat 8
+            li Eksponaat 9
+            li Eksponaat 10
+            li Eksponaat 11
+            li Eksponaat 12
+            li Eksponaat 13
+            li Eksponaat 14
+            li Eksponaat 15
+            li Eksponaat 16
+            li Eksponaat 17
+            li Eksponaat 18
+            li Eksponaat 19
+            li Eksponaat 20
+            li Eksponaat 21
+            li Eksponaat 22
+            li Eksponaat 23
+            li Eksponaat 24
+            li Eksponaat 25
+        section.cars-body
+          .col1
+          .col2
+          .col3
+          .col4
+          .col5
+    
+  .contact-page-overlay
+    header.contact-header
+      p
+       | Info // Kontakt // Ajalugu 
+      //- hr
+    .contact-content-wrapper
+      aside.contact-side
+        ul
+          a(href="#contact") 
+            li Kontakt / Külastamine
+          a(href="#mission")
+            li Missioon
+          a(href="#history")
+            li Ajalugu
+          a(href="#documents") 
+            li Dokumendid
+          a(href="#projects")
+            li Projektid
+          a(href="#databases")    
+            li Andmebaasid
+      section.contact-body
+        section#contact
+          .heading Kontakt / Külastamine
+          .contact-section-wrapper
+            iframe(src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38205.0145586066!2d24.673926534252278!3d59.395793455785245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46929513d3a9be2f%3A0x807ed17f20f0802a!2sN%C3%B5mme-Kase+12%2C+11618+Tallinn!5e0!3m2!1sen!2see!4v1466948009764"
+              width="650"
+              height="450"
+              frameborder="0" 
+              allowfullscreen)
+            article
+             | Eesti vanatehnika muuseum asub aadressil Nõmme-Kase 12 Nõmmel, Tallinnas.
+             | Külastamine toimub kokkuleppel.
+             br
+             br
+             | Kontakt:
+             br
+             | Rene Levoll
+             br
+             | +372 5122146, 6700120
+             br
+             | tehnikamuuseum@gmail.com
+             
+             
+        section#mission
+          .heading Missioon
+          article
+            | Muuseumi põhikirjaline eesmärk oli tehnikaajaloo 
+            | väärtustamine ja tehnikamuuseumi rajamine. Tänase seisuga võib öelda, et muuseum on 
+            | loodud ja toimib. Neli aastat on muuseumi ekspositsioon olnud Palmse mõisas ning 
+            | tänasel päeval Tallinnas Nõmmel.
+          
+        section#history
+          .heading Ajalugu
+          article
+            | Endine helikassetitehase hoone Nõmme-Kase 12 Tallinnas on pikka aega olnud 
+            | varjupaigaks vanatehnikahuvilistele. Nii oli see 1998. aastast taasasutatud 
+            | klubile Unic ja hiljem Vanatehnika Liidule. Sihtasutus Eesti Vanatehnika Muuseum 
+            | asutati 19. detsembril 2007. aastal. Muuseumi põhikirjaline eesmärk oli tehnikaajaloo 
+            | väärtustamine ja tehnikamuuseumi rajamine. Tänase seisuga võib öelda, et muuseum on 
+            | loodud ja toimib. Neli aastat on muuseumi ekspositsioon olnud Palmse mõisas ning 
+            | tänasel päeval Tallinnas Nõmmel.
+        section#documents
+          .heading Dokumendid
+          article
+            .document-download
+              a(href="content/documents/file.pdf" target="_blank")
+                .download-image
+                p Document_1.pdf
+              | Esimese dokumendi kirjeldus
+            .document-download
+              a(href="content/documents/file.pdf" target="_blank")
+                .download-image
+                p Document_2.pdf
+              | Teise dokumendi kirjeldus
+            .document-download
+              a(href="content/documents/file.pdf" target="_blank")
+                .download-image
+                p Document_3.pdf
+              | Kolmanda dokumendi kirjeldus
+
+
+        section#projects
+          .heading Projektid
+          article
+           | Tehnikamuuseumis on hetkel käsil mitmed põnevad projektid
+        section#databases
+          .heading Andmebaasid
+          article
+           | Andmebaasidele ligipääsemiseks vajuta
+           a(href="#")  siia
+  .pictures-page-overlay
+    header.pictures-header
+      p
+        | // Pildigalerii
+      hr
+    section.pictures-content
+        aside.pictures-side
+          .static-theme-container
+            h2 Teemad
+            hr#static-hr
+          ul
+            li Tsaariaeg
+            li Saksaaeg
+            li Eestiaeg
+            li Nõukogude aeg
+            li Kaasaeg
+        section.pictures-body
+          .col1
+          .col2
+          .col3
+          .col4
+          .col5
+  .picture-large-overlay
+    .large-picture-container
+      .large-picture-close &#9587;
+  .page-logo
+  .overlay-back-button
+    |<< Tagasi esilehele
+  .page-language
+    .language-est(data-title="Eesti")
+    .language-eng(data-title="Inglise")
+    .language-rus(data-title="Vene")
+    .language-tib(data-title="Tiibeti")
+    //- .language-tib(data-title="བོད་སྐད།")
+  
+  script(src="content/script/jquery-1.7.2.min.js")
+  //- script(src="https://maps.googleapis.com/maps/api/js?v=3.exp" async defer)
+  script(src="content/script/app-min.js")
+  
